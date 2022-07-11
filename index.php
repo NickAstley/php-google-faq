@@ -82,28 +82,61 @@ $db = [
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <div class="container">
-        <?php 
-        foreach($db as $section) {
-            foreach($section as $key => $subsection) {
-                // Stampo il titolo della sottosezione
-                echo $key === 0 ? "<h2>" : "<h3>";
-                echo $subsection["title"];
-                echo $key === 0 ? "</h2>" : "</h3>";
-                // Stampo ogni paragrafo della sottosezione
-                foreach($subsection["listaParagrafi"] as $paragraph) {
-                    if(substr($paragraph, 0, 4) !== "<ol>") {
-                        echo "<p>";
-                        echo $paragraph;
-                        echo "</p>";
-                    } else {
-                        // Se il paragrafo è un ol, non inserisco il tag p
-                        echo $paragraph;
+    <header>
+        <nav>
+            <div class="flex-logo-container">
+                <a href="#" class="flex-logo">
+                    <span class="logo-container">
+                        <img src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" alt="">
+                    </span>
+                    <span class="title-link">Privacy e termini</span>
+                </a>
+            </div>
+            <div class="menu-container">
+                <ul class="menu">
+                    <li>
+                        <a href="#">Introduzione</a>
+                    </li>
+                    <li>
+                        <a href="#">Norme sulla privacy</a>
+                    </li>
+                    <li>
+                        <a href="#">Termini di servizio</a>
+                    </li>
+                    <li>
+                        <a href="#">Tecnologie</a>
+                    </li>
+                    <li>
+                        <a href="#" class="active">Domande frequenti</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <?php 
+            foreach($db as $section) {
+                foreach($section as $key => $subsection) {
+                    // Stampo il titolo della sottosezione
+                    echo $key === 0 ? "<h2>" : "<h3>";
+                    echo $subsection["title"];
+                    echo $key === 0 ? "</h2>" : "</h3>";
+                    // Stampo ogni paragrafo della sottosezione
+                    foreach($subsection["listaParagrafi"] as $paragraph) {
+                        if(substr($paragraph, 0, 4) !== "<ol>") {
+                            echo "<p>";
+                            echo $paragraph;
+                            echo "</p>";
+                        } else {
+                            // Se il paragrafo è un ol, non inserisco il tag p
+                            echo $paragraph;
+                        }
                     }
                 }
             }
-        }
-        ?>
-    </div>
+            ?>
+        </div>
+    </main>
 </body>
 </html>

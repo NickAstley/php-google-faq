@@ -59,8 +59,65 @@ ol > li > ol {
     list-style: lower-alpha;
 }
 
+header {
+    border-bottom: 1px solid #ddd;
+}
+
 .container {
     padding: 32px;
     max-width: 978px;
     margin: 0 auto;
+}
+
+.flex-logo-container {
+    padding: 1rem;
+}
+
+.flex-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-container {
+    display: inline-block;
+    height: 24px;
+}
+
+.title-link {
+    color: #5f6368;
+    font-family: 'Assistant', sans-serif;
+    font-size: 22px;
+    line-height: 24px;
+    position: relative;
+    top: -1.5px;
+}
+
+.menu-container {
+    padding-left: 20px;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+}
+
+.menu li {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.43;
+    margin-right: 42px;
+    padding: 0;
+}
+
+.menu li a {
+    padding-bottom: 6px;
+    color: #5f6368;
+    display: inline-block;
+}
+
+.menu li a.active {
+    color: #3367d6;
+    border-bottom: 3px solid #3367d6;
 }
